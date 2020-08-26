@@ -135,9 +135,9 @@ class Document {
 						$articleContent[] = $list;
 						break;
 					case "table-wrap":
-						$table = new Table($content);
-						$articleContent[] = $table;
-						break;
+						//$table = new Table($content);
+						//$articleContent[] = $table;
+						//break;
 					case "fig":
 						$figure = new Figure($content);
 						$articleContent[] = $figure;
