@@ -44,7 +44,13 @@ class Text {
 								$newArray = array();
 								foreach ($elementAttrs as $attrKey => $attrValue) {
 									if ($attrKey === "rid") {
-										$newArray ["href"] = "#" . $attrValue;
+										// modificata per gestire il caso in cui il link sia un range, ad esempio '5-7'
+										// l'xml  è così :  <xref ref-type="bibr" rid="ref5 ref6 ref7">5-7</xref>
+										// e l'href che esce nonè corretto, devo prendere solo il primo elemento di 'rid'
+										// aggiunto:
+										$attrExploded=explode(" ",$attrValue);
+										// riga originale: $newArray ["href"] = "#" . $attrValue;
+										$newArray ["href"] = "#" . $attrExploded[0];
 									} elseif ($attrKey === "ref-type") {
 										$newArray ["class"] = $attrValue;
 									} else {
