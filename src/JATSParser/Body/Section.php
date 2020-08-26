@@ -98,9 +98,9 @@ class Section extends AbstractElement {
 					$content[] = $list;
 					break;
 				case "table-wrap":
-					$table = new Table($sectionElement);
-					$content[] = $table;
-					break;
+					//$table = new Table($sectionElement);
+					//$content[] = $table;
+					//break;
 				case "fig":
 					$figure = new Figure($sectionElement);
 					$content[] = $figure;
